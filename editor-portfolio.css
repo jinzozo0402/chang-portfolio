@@ -1009,6 +1009,7 @@ body {
     margin-top: 40px;
     display: flex;
     gap: 20px;
+    justify-content: space-around;
 }
 
 .contact-info .social-link {
