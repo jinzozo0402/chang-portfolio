@@ -503,10 +503,10 @@ function initTypewriterEffect() {
     // Define the content with proper HTML structure
     const content = [
         { type: 'open', tag: 'span', class: 'highlight' },
-        { type: 'text', content: 'VIDEO EDITOR' },
+        { type: 'text', content: 'TRANG NGUYỄN' },
         { type: 'close', tag: 'span' },
         { type: 'break' },
-        { type: 'text', content: 'JUNIOR' }
+        { type: 'text', content: 'VIDEO EDITOR' }
     ];
     
     heroTitle.innerHTML = '';
