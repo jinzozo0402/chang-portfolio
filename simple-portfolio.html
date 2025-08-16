@@ -494,6 +494,61 @@
             });
         });
 
+        // Typewriter effect for hero title
+        function initTypewriterEffect() {
+            const heroTitle = document.querySelector('.hero-title');
+            if (!heroTitle) return;
+            
+            // Define the content with proper HTML structure
+            const content = [
+                { type: 'open', tag: 'span', class: 'highlight' },
+                { type: 'text', content: 'VIDEO EDITOR' },
+                { type: 'close', tag: 'span' },
+                { type: 'break' },
+                { type: 'text', content: 'JUNIOR' }
+            ];
+            
+            heroTitle.innerHTML = '';
+            let currentIndex = 0;
+            let currentTextIndex = 0;
+            
+            function typeWriter() {
+                if (currentIndex >= content.length) return;
+                
+                const current = content[currentIndex];
+                
+                if (current.type === 'open') {
+                    heroTitle.innerHTML += `<${current.tag} class="${current.class}">`;
+                    currentIndex++;
+                    setTimeout(typeWriter, 50);
+                } else if (current.type === 'close') {
+                    heroTitle.innerHTML += `</${current.tag}>`;
+                    currentIndex++;
+                    setTimeout(typeWriter, 50);
+                } else if (current.type === 'break') {
+                    heroTitle.innerHTML += '<br>';
+                    currentIndex++;
+                    setTimeout(typeWriter, 200);
+                } else if (current.type === 'text') {
+                    if (currentTextIndex < current.content.length) {
+                        heroTitle.innerHTML += current.content.charAt(currentTextIndex);
+                        currentTextIndex++;
+                        setTimeout(typeWriter, 100);
+                    } else {
+                        currentTextIndex = 0;
+                        currentIndex++;
+                        setTimeout(typeWriter, 200);
+                    }
+                }
+            }
+            
+            // Start typewriter after page load
+            setTimeout(typeWriter, 1500);
+        }
+
+        // Initialize typewriter effect
+        initTypewriterEffect();
+
         console.log('🎬 Simple Portfolio loaded successfully!');
     </script>
 </body>

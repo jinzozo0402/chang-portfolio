@@ -226,8 +226,26 @@ AOS.init({
 
 ---
 
+## 🐛 Bug Fixes & Updates
+
+### v1.0.1 (Latest)
+- ✅ **Fixed JavaScript errors**: Resolved `closeMenu` identifier conflicts
+- ✅ **Fixed typewriter effect**: Now properly renders HTML tags instead of raw HTML
+- ✅ **Improved error handling**: Added safety checks for DOM operations
+- ✅ **Enhanced typewriter**: Created advanced TypewriterEffect class with cursor animation
+- ✅ **Added demo files**: `simple-portfolio.html`, `typewriter-demo.html` for testing
+
+### 📁 Files Added for Debugging:
+- `simple-portfolio.html` - Simplified working version
+- `test.html` - Basic functionality test
+- `typewriter-fix.js` - Enhanced typewriter effect class
+- `typewriter-demo.html` - Interactive demo for typewriter
+
 ## 📋 TODO List
 
+- [x] Fix typewriter effect HTML rendering
+- [x] Resolve JavaScript naming conflicts  
+- [x] Add error handling and safety checks
 - [ ] Thêm video thực tế thay placeholder
 - [ ] Tích hợp Google Analytics
 - [ ] Thêm blog section

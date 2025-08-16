@@ -500,16 +500,46 @@ function initTypewriterEffect() {
     const heroTitle = document.querySelector('.hero-title');
     if (!heroTitle) return;
     
-    const text = heroTitle.innerHTML;
-    heroTitle.innerHTML = '';
+    // Define the content with proper HTML structure
+    const content = [
+        { type: 'open', tag: 'span', class: 'highlight' },
+        { type: 'text', content: 'VIDEO EDITOR' },
+        { type: 'close', tag: 'span' },
+        { type: 'break' },
+        { type: 'text', content: 'JUNIOR' }
+    ];
     
-    let index = 0;
+    heroTitle.innerHTML = '';
+    let currentIndex = 0;
+    let currentTextIndex = 0;
     
     function typeWriter() {
-        if (index < text.length) {
-            heroTitle.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 100);
+        if (currentIndex >= content.length) return;
+        
+        const current = content[currentIndex];
+        
+        if (current.type === 'open') {
+            heroTitle.innerHTML += `<${current.tag} class="${current.class}">`;
+            currentIndex++;
+            setTimeout(typeWriter, 50);
+        } else if (current.type === 'close') {
+            heroTitle.innerHTML += `</${current.tag}>`;
+            currentIndex++;
+            setTimeout(typeWriter, 50);
+        } else if (current.type === 'break') {
+            heroTitle.innerHTML += '<br>';
+            currentIndex++;
+            setTimeout(typeWriter, 200);
+        } else if (current.type === 'text') {
+            if (currentTextIndex < current.content.length) {
+                heroTitle.innerHTML += current.content.charAt(currentTextIndex);
+                currentTextIndex++;
+                setTimeout(typeWriter, 100);
+            } else {
+                currentTextIndex = 0;
+                currentIndex++;
+                setTimeout(typeWriter, 200);
+            }
         }
     }
     
