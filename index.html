@@ -1,290 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="description" content="Portfolio Video Editor Junior - Chuyên nghiệp, sáng tạo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="Video Editor Junior">
+    <meta name="keywords" content="video editor, portfolio, TVC, phim ngắn, motion graphics, montage">
 
-    <!-- Title  -->
-    <title>Sonar - Photography Template</title>
+    <!-- Title -->
+    <title>Video Editor Junior | Portfolio</title>
 
-    <!-- Favicon  -->
+    <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
 
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="editor-portfolio.css">
 
 </head>
 
 <body>
-    <!-- Preloader Start -->
+    <!-- Preloader -->
     <div id="preloader">
-        <div class="preload-content">
-            <div id="sonar-load"></div>
+        <div class="preloader-content">
+            <div class="film-strip">
+                <div class="film-hole"></div>
+                <div class="film-hole"></div>
+                <div class="film-hole"></div>
+                <div class="film-hole"></div>
+            </div>
+            <p>Đang tải...</p>
         </div>
     </div>
-    <!-- Preloader End -->
 
-    <!-- Grids -->
-    <div class="grids d-flex justify-content-between">
-        <div class="grid1"></div>
-        <div class="grid2"></div>
-        <div class="grid3"></div>
-        <div class="grid4"></div>
-        <div class="grid5"></div>
-        <div class="grid6"></div>
-        <div class="grid7"></div>
-        <div class="grid8"></div>
-        <div class="grid9"></div>
+    <!-- Background Grid -->
+    <div class="bg-grid">
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
     </div>
 
-    <!-- ***** Main Menu Area Start ***** -->
-    <div class="mainMenu d-flex align-items-center justify-content-between">
-        <!-- Close Icon -->
-        <div class="closeIcon">
-            <i class="ti-close" aria-hidden="true"></i>
-        </div>
-        <!-- Logo Area -->
-        <div class="logo-area">
-            <a href="index.html">Sonar</a>
-        </div>
-        <!-- Nav -->
-        <div class="sonarNav wow fadeInUp" data-wow-delay="1s">
-            <nav>
-                <ul>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about-me.html">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="portfolio.html">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="elements.html">Elements</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <!-- Copwrite Text -->
-        <div class="copywrite-text">
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-        </div>
-    </div>
-    <!-- ***** Main Menu Area End ***** -->
+    <!-- Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
 
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="menu-area d-flex justify-content-between">
-                        <!-- Logo Area  -->
-                        <div class="logo-area">
-                            <a href="index.html">Sonar</a>
-                        </div>
-
-                        <div class="menu-content-area d-flex align-items-center">
-                            <!-- Header Social Area -->
-                            <div class="header-social-area d-flex align-items-center">
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            </div>
-                            <!-- Menu Icon -->
-                            <span class="navbar-toggler-icon" id="menuIcon"></span>
-                        </div>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo" data-aos="fade-down">
+                <h2>VIDEO<span>EDITOR</span></h2>
+            </div>
+            
+            <div class="nav-menu">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Full Screen Menu -->
+        <div class="fullscreen-menu" id="fullscreen-menu">
+            <div class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="menu-content">
+                <nav class="menu-nav">
+                    <a href="#home" class="menu-link" data-section="home">TRANG CHỦ</a>
+                    <a href="#about" class="menu-link" data-section="about">GIỚI THIỆU</a>
+                    <a href="#portfolio" class="menu-link" data-section="portfolio">PORTFOLIO</a>
+                    <a href="#skills" class="menu-link" data-section="skills">KỸ NĂNG</a>
+                    <a href="#contact" class="menu-link" data-section="contact">LIÊN HỆ</a>
+                </nav>
+                
+                <div class="menu-footer">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
+    </nav>
 
-    <!-- ***** Hero Area Start ***** -->
-    <section class="hero-area">
-        <div class="hero-slides owl-carousel">
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide1.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>Sand Storm</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
-                        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up" data-aos-delay="300">
+                <span class="hero-subtitle">Xin chào, tôi là</span>
+                <h1 class="hero-title">
+                    <span class="highlight">VIDEO EDITOR</span>
+                    <br>JUNIOR
+                </h1>
+                <p class="hero-description">
+                    Chuyên tạo ra những câu chuyện bằng hình ảnh. 
+                    Từ TVC quảng cáo đến phim ngắn nghệ thuật, 
+                    mỗi project đều được chăm chút với tình yêu và sự sáng tạo.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <span>XEM PORTFOLIO</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>LIÊN HỆ</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">6+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Hours</span>
                     </div>
                 </div>
             </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide2.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>New York View</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
-                        </div>
+            
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="600">
+                <div class="video-frame">
+                    <div class="frame-border"></div>
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-timeline">
+                        <div class="timeline-progress"></div>
                     </div>
                 </div>
             </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide3.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>The Desert</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
+        </div>
+        
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+            <span>Cuộn xuống</span>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Về tôi</span>
+                <h2 class="section-title">Câu chuyện của một <span>Editor</span></h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p>
+                        Với niềm đam mê bất tận đối với nghệ thuật kể chuyện qua hình ảnh, 
+                        tôi bắt đầu hành trình của mình trong thế giới post-production từ năm 2022. 
+                        Mỗi frame, mỗi cut, mỗi transition đều được tôi xem như một bức tranh nghệ thuật.
+                    </p>
+                    
+                    <p>
+                        Từ những video TVC ngắn gọn nhưng đầy sức hút, đến những bộ phim ngắn 
+                        đầy cảm xúc, tôi luôn tìm cách mang đến những trải nghiệm thị giác độc đáo 
+                        và để lại ấn tượng sâu sắc trong lòng người xem.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-video"></i>
+                            <span>Chuyên nghiệp trong Adobe Premiere Pro & After Effects</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Có khiếu thẩm mỹ và sense màu sắc tốt</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Luôn đảm bảo deadline và chất lượng</span>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide4.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>Mountains Hike</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
+                
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="timeline-visual">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-content">
+                                <h4>Bắt đầu học editing</h4>
+                                <p>Khởi đầu với những video đơn giản</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide1.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>Sand Storm</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-content">
+                                <h4>Freelance đầu tiên</h4>
+                                <p>Thực hiện các dự án TVC và content</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide2.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>New York View</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide3.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>The Desert</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide4.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>Mountains Hike</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide1.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>Sand Storm</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide2.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>New York View</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide3.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>The Desert</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url(img/bg-img/slide4.jpg);">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-end">
-                        <div class="col-12">
-                            <div class="hero-slides-content">
-                                <div class="line"></div>
-                                <h2>Mountains Hike</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel tortor facilisis, volutpat nulla placerat, tincidunt mi. Nullam vel orci dui. Suspendisse sit amet laoreet neque. Fusce sagittis suscipit sem.</p>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-content">
+                                <h4>Chuyên nghiệp hóa</h4>
+                                <p>Phát triển style riêng và kỹ thuật nâng cao</p>
                             </div>
                         </div>
                     </div>
@@ -292,194 +227,550 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </section>
-    <!-- ***** Hero Area End ***** -->
 
-    <!-- ***** Portfolio Area Start ***** -->
-    <div class="portfolio-area section-padding-100">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="portfolio-title">
-                        <h2>“In photography there is a reality so subtle that it becomes more <span>real</span> than reality.”</h2>
-                    </div>
-                </div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Portfolio</span>
+                <h2 class="section-title">Những tác phẩm <span>nổi bật</span></h2>
+                <p class="section-description">
+                    Mỗi video là một câu chuyện, mỗi câu chuyện là một trải nghiệm độc đáo
+                </p>
             </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                
+                <!-- TVC Highland -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-card">
+                        <div class="card-header">
+                            <div class="project-type">TVC COMMERCIAL</div>
+                            <div class="project-year">2024</div>
+                        </div>
+                        
+                        <div class="card-visual">
+                            <div class="video-thumbnail">
+                                <div class="thumbnail-overlay">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="video-duration">0:30</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="project-title">Highland Coffee TVC</h3>
+                            <p class="project-description">
+                                Một TVC đầy cảm hứng cho thương hiệu cà phê Highland, 
+                                kết hợp giữa cinematography chuyên nghiệp và color grading 
+                                tinh tế để tạo nên không khí ấm áp, gần gũi. Video tập trung 
+                                vào việc kể câu chuyện về những khoảnh khắc gắn kết qua tách cà phê.
+                            </p>
+                            
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Thời lượng:</span>
+                                    <span class="detail-value">30 giây</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Software:</span>
+                                    <span class="detail-value">Premiere Pro, After Effects</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Kỹ thuật:</span>
+                                    <span class="detail-value">Color Grading, Motion Graphics</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="tag">Commercial</span>
+                                <span class="tag">Color Grading</span>
+                                <span class="tag">Brand Video</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="row justify-content-between">
-                <!-- Single Portfoio Area -->
-                <div class="col-12 col-md-5">
-                    <div class="single-portfolio-item mt-100 portfolio-item-1 wow fadeIn">
-                        <div class="backend-content">
-                            <img class="dots" src="img/core-img/dots.png" alt="">
-                            <h2>Reality</h2>
+                <!-- Phim Ngắn 1 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-card">
+                        <div class="card-header">
+                            <div class="project-type">PHIM NGẮN</div>
+                            <div class="project-year">2024</div>
                         </div>
-                        <div class="portfolio-thumb">
-                            <img src="img/bg-img/p1.png" alt="">
+                        
+                        <div class="card-visual">
+                            <div class="video-thumbnail">
+                                <div class="thumbnail-overlay">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="video-duration">5:42</div>
+                            </div>
                         </div>
-                        <div class="portfolio-meta">
-                            <p class="portfolio-date">Feb 02, 2018</p>
-                            <h2>Italy in the sunset</h2>
+                        
+                        <div class="card-content">
+                            <h3 class="project-title">"Khoảnh Khắc Cuối"</h3>
+                            <p class="project-description">
+                                Một tác phẩm phim ngắn cảm động về tình cha con qua góc nhìn 
+                                của một đứa trẻ. Video sử dụng kỹ thuật montage tinh tế, 
+                                kết hợp với sound design và color correction để tạo nên 
+                                những cảm xúc sâu sắc và chân thật nhất.
+                            </p>
+                            
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Thời lượng:</span>
+                                    <span class="detail-value">5 phút 42 giây</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Software:</span>
+                                    <span class="detail-value">Premiere Pro, DaVinci Resolve</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Kỹ thuật:</span>
+                                    <span class="detail-value">Montage, Sound Design</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="tag">Drama</span>
+                                <span class="tag">Emotional</span>
+                                <span class="tag">Storytelling</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Single Portfoio Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single-portfolio-item mt-230 portfolio-item-2 wow fadeIn">
-                        <div class="backend-content">
-                            <img class="dots" src="img/core-img/dots.png" alt="">
+
+                <!-- Phim Ngắn 2 -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-card">
+                        <div class="card-header">
+                            <div class="project-type">PHIM NGẮN</div>
+                            <div class="project-year">2024</div>
                         </div>
-                        <div class="portfolio-thumb">
-                            <img src="img/bg-img/p2.png" alt="">
+                        
+                        <div class="card-visual">
+                            <div class="video-thumbnail">
+                                <div class="thumbnail-overlay">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="video-duration">3:28</div>
+                            </div>
                         </div>
-                        <div class="portfolio-meta">
-                            <p class="portfolio-date">Feb 02, 2018</p>
-                            <h2>Mountain Landscape</h2>
+                        
+                        <div class="card-content">
+                            <h3 class="project-title">"Những Ngày Không Tên"</h3>
+                            <p class="project-description">
+                                Phim ngắn thực nghiệm về cuộc sống thường nhật của thế hệ trẻ. 
+                                Sử dụng technique jump-cut và rhythm editing để tạo nên nhịp điệu 
+                                năng động, phản ánh sự hối hả của cuộc sống hiện đại. 
+                                Color palette được điều chỉnh để mang tính đương đại.
+                            </p>
+                            
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Thời lượng:</span>
+                                    <span class="detail-value">3 phút 28 giây</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Software:</span>
+                                    <span class="detail-value">Final Cut Pro, After Effects</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Kỹ thuật:</span>
+                                    <span class="detail-value">Jump-cut, Rhythm Editing</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="tag">Experimental</span>
+                                <span class="tag">Modern</span>
+                                <span class="tag">Youth</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Video Motivation -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-card">
+                        <div class="card-header">
+                            <div class="project-type">MOTIVATION</div>
+                            <div class="project-year">2024</div>
+                        </div>
+                        
+                        <div class="card-visual">
+                            <div class="video-thumbnail">
+                                <div class="thumbnail-overlay">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="video-duration">2:15</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="project-title">"Rise Above"</h3>
+                            <p class="project-description">
+                                Video motivation mạnh mẽ với thông điệp về việc vượt qua thử thách 
+                                và theo đuổi ước mơ. Kết hợp dynamic text animation với powerful music, 
+                                sử dụng kỹ thuật speed ramping và dramatic color grading để tạo 
+                                cảm giác hừng hực và truyền cảm hứng.
+                            </p>
+                            
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Thời lượng:</span>
+                                    <span class="detail-value">2 phút 15 giây</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Software:</span>
+                                    <span class="detail-value">After Effects, Premiere Pro</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Kỹ thuật:</span>
+                                    <span class="detail-value">Text Animation, Speed Ramping</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="tag">Motivational</span>
+                                <span class="tag">Dynamic</span>
+                                <span class="tag">Inspiring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video News -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-card">
+                        <div class="card-header">
+                            <div class="project-type">NEWS PACKAGE</div>
+                            <div class="project-year">2024</div>
+                        </div>
+                        
+                        <div class="card-visual">
+                            <div class="video-thumbnail">
+                                <div class="thumbnail-overlay">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="video-duration">1:45</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="project-title">Tech Innovation Report</h3>
+                            <p class="project-description">
+                                Package tin tức về xu hướng công nghệ mới với format chuyên nghiệp. 
+                                Sử dụng lower thirds, graphics package và infographic animation 
+                                để truyền tải thông tin một cách rõ ràng và hấp dẫn. 
+                                Áp dụng standard broadcast editing techniques.
+                            </p>
+                            
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Thời lượng:</span>
+                                    <span class="detail-value">1 phút 45 giây</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Software:</span>
+                                    <span class="detail-value">Avid Media Composer, After Effects</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Kỹ thuật:</span>
+                                    <span class="detail-value">Broadcast Standard, Graphics</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="tag">News</span>
+                                <span class="tag">Professional</span>
+                                <span class="tag">Infographic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bonus Project -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="portfolio-card">
+                        <div class="card-header">
+                            <div class="project-type">MUSIC VIDEO</div>
+                            <div class="project-year">2024</div>
+                        </div>
+                        
+                        <div class="card-visual">
+                            <div class="video-thumbnail">
+                                <div class="thumbnail-overlay">
+                                    <div class="play-button">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                </div>
+                                <div class="video-duration">4:12</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <h3 class="project-title">"Midnight Dreams"</h3>
+                            <p class="project-description">
+                                Music video nghệ thuật với concept đầy sáng tạo về những giấc mơ đêm khuya. 
+                                Kết hợp practical effects với visual effects, sử dụng creative transitions 
+                                và synchronized editing với beat của nhạc. Color scheme tối giản 
+                                nhưng đầy ấn tượng với blue-orange contrast.
+                            </p>
+                            
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Thời lượng:</span>
+                                    <span class="detail-value">4 phút 12 giây</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Software:</span>
+                                    <span class="detail-value">Premiere Pro, After Effects, Blender</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Kỹ thuật:</span>
+                                    <span class="detail-value">VFX, Beat Sync, Creative Transitions</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-tags">
+                                <span class="tag">Music Video</span>
+                                <span class="tag">Creative</span>
+                                <span class="tag">VFX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+        </div>
+    </section>
 
-            <div class="row">
-                <!-- Single Portfoio Area -->
-                <div class="col-12 col-md-10">
-                    <div class="single-portfolio-item mt-100 portfolio-item-3 wow fadeIn">
-                        <div class="backend-content">
-                            <img class="dots" src="img/core-img/dots.png" alt="">
-                            <h2>Photography</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Kỹ năng</span>
+                <h2 class="section-title">Công cụ & <span>Kỹ thuật</span></h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Video Editing</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-adobe"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>Adobe Premiere Pro</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="portfolio-thumb">
-                            <img src="img/bg-img/p3.png" alt="">
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>Final Cut Pro</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="portfolio-meta">
-                            <p class="portfolio-date">Feb 02, 2018</p>
-                            <h2>Foggy sunset over the lake</h2>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>DaVinci Resolve</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row justify-content-end">
-                <!-- Single Portfoio Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single-portfolio-item portfolio-item-4 wow fadeIn">
-                        <div class="backend-content">
-                            <img class="dots" src="img/core-img/dots.png" alt="">
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Motion Graphics</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fab fa-adobe"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>After Effects</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="portfolio-thumb">
-                            <img src="img/bg-img/p2.png" alt="">
-                        </div>
-                        <div class="portfolio-meta">
-                            <p class="portfolio-date">Feb 02, 2018</p>
-                            <h2>Clouds on mountain top</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Single Portfoio Area -->
-                <div class="col-12 col-md-5">
-                    <div class="single-portfolio-item portfolio-item-5 wow fadeIn">
-                        <div class="backend-content">
-                            <img class="dots" src="img/core-img/dots.png" alt="">
-                            <h2>Hope</h2>
-                        </div>
-                        <div class="portfolio-thumb">
-                            <img src="img/bg-img/p5.png" alt="">
-                        </div>
-                        <div class="portfolio-meta">
-                            <p class="portfolio-date">Feb 02, 2018</p>
-                            <h2>Over the canion</h2>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>Blender</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="70%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <!-- Single Portfoio Area -->
-                <div class="col-12 col-md-4">
-                    <div class="single-portfolio-item portfolio-item-6 wow fadeIn">
-                        <div class="portfolio-thumb">
-                            <img src="img/bg-img/p6.png" alt="">
+                
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Color & Audio</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>Color Grading</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="88%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="portfolio-meta">
-                            <p class="portfolio-date">Feb 02, 2018</p>
-                            <h2>Mirror lake</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-end">
-                <!-- Single Portfoio Area -->
-                <div class="col-12 col-md-4">
-                    <div class="single-portfolio-item portfolio-item-7 wow fadeIn">
-                        <div class="backend-content">
-                            <img class="dots" src="img/core-img/dots.png" alt="">
-                            <h2>Future</h2>
-                        </div>
-                        <div class="portfolio-thumb">
-                            <img src="img/bg-img/p7.png" alt="">
-                        </div>
-                        <div class="portfolio-meta">
-                            <p class="portfolio-date">Feb 02, 2018</p>
-                            <h2>Mirror lake</h2>
+                        
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-volume-up"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h4>Audio Post</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ***** Portfolio Area End ***** -->
+    </section>
 
-    <!-- ***** Call to Action Area Start ***** -->
-    <div class="sonar-call-to-action-area section-padding-0-100">
-        <div class="backEnd-content">
-            <h2>Dream</h2>
-        </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="call-to-action-content wow fadeInUp" data-wow-delay="0.5s">
-                        <h2>I am an experienced photographer</h2>
-                        <h5>Let’s talk</h5>
-                        <a href="#" class="btn sonar-btn mt-100">contact me</a>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Liên hệ</span>
+                <h2 class="section-title">Hãy tạo nên điều <span>tuyệt vời</span> cùng nhau</h2>
+                <p class="section-description">
+                    Sẵn sàng biến ý tưởng của bạn thành hiện thực qua những thước phim đầy cảm xúc
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>videoeditor@email.com</p>
+                        </div>
                     </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Điện thoại</h4>
+                            <p>+84 123 456 789</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Địa chỉ</h4>
+                            <p>Hồ Chí Minh, Việt Nam</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Họ và tên" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Chủ đề">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tin nhắn của bạn" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>GỬI TIN NHẮN</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ***** Call to Action Area End ***** -->
+    </section>
 
-    <!-- ***** Footer Area Start ***** -->
-    <footer class="footer-area">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Copywrite Text -->
-                    <div class="copywrite-text">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-                    </div>
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Video Editor Junior. Mọi video đều được tạo ra với tình yêu và đam mê.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Trang chủ</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Liên hệ</a>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- ***** Footer Area End ***** -->
 
-    <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="editor-portfolio.js"></script>
 
 </body>
-
 </html>
