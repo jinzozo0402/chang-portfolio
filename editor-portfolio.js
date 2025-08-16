@@ -479,7 +479,7 @@ function showVideoModal(card) {
 // PARALLAX EFFECTS
 // =====================================================
 function initParallaxEffects() {
-    const parallaxElements = document.querySelectorAll('.hero-visual, .about-visual');
+    const parallaxElements = document.querySelectorAll('.hero-visual');
     
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
