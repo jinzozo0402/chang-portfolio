@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editor Portfolio - Debug Version</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-gray-dark: #1a1a1a;
+            --color-gray-medium: #2a2a2a;
+            --color-accent: #ff6b6b;
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Playfair Display', serif;
+        }
+        
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-black);
+            color: var(--color-white);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--color-accent);
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--color-white);
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 40px;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+        
+        .highlight {
+            color: var(--color-accent);
+        }
+        
+        .hero-description {
+            font-size: 18px;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Portfolio Grid */
+        .portfolio-section {
+            padding: 120px 40px;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 4vw, 48px);
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-card {
+            background: var(--color-gray-dark);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: var(--color-gray-medium);
+        }
+        
+        .project-type {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+        
+        .video-thumbnail {
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-gray-medium), var(--color-gray-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 30px;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .project-description {
+            color: #b0b0b0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: var(--color-accent);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--color-gray-dark);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 80%;
+            max-height: 80%;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--color-gray-dark);
+            padding: 40px;
+            text-align: center;
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>VIDEO<span>EDITOR</span></h2>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="highlight">VIDEO EDITOR</span><br>
+                JUNIOR
+            </h1>
+            <p class="hero-description">
+                Chuyên tạo ra những câu chuyện bằng hình ảnh. 
+                Từ TVC quảng cáo đến phim ngắn nghệ thuật.
+            </p>
+            <button class="btn" onclick="scrollToPortfolio()">
+                <span>XEM PORTFOLIO</span>
+                <i class="fas fa-arrow-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <h2 class="section-title">Những tác phẩm <span class="highlight">nổi bật</span></h2>
+        
+        <div class="portfolio-grid">
+            <!-- TVC Highland -->
+            <div class="portfolio-card" onclick="openModal('Highland Coffee TVC')">
+                <div class="card-header">
+                    <div class="project-type">TVC COMMERCIAL</div>
+                    <div>2024</div>
+                </div>
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">Highland Coffee TVC</h3>
+                    <p class="project-description">
+                        TVC đầy cảm hứng cho thương hiệu cà phê Highland, 
+                        kết hợp cinematography chuyên nghiệp và color grading tinh tế.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Phim Ngắn 1 -->
+            <div class="portfolio-card" onclick="openModal('Khoảnh Khắc Cuối')">
+                <div class="card-header">
+                    <div class="project-type">PHIM NGẮN</div>
+                    <div>2024</div>
+                </div>
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">"Khoảnh Khắc Cuối"</h3>
+                    <p class="project-description">
+                        Tác phẩm phim ngắn cảm động về tình cha con. 
+                        Sử dụng kỹ thuật montage tinh tế và sound design.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video Motivation -->
+            <div class="portfolio-card" onclick="openModal('Rise Above')">
+                <div class="card-header">
+                    <div class="project-type">MOTIVATION</div>
+                    <div>2024</div>
+                </div>
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">"Rise Above"</h3>
+                    <p class="project-description">
+                        Video motivation mạnh mẽ với dynamic text animation 
+                        và speed ramping tạo cảm giác truyền cảm hứng.
+                    </p>
+                </div>
+            </div>
+
+            <!-- More projects -->
+            <div class="portfolio-card" onclick="openModal('Những Ngày Không Tên')">
+                <div class="card-header">
+                    <div class="project-type">PHIM NGẮN</div>
+                    <div>2024</div>
+                </div>
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">"Những Ngày Không Tên"</h3>
+                    <p class="project-description">
+                        Phim ngắn thực nghiệm về cuộc sống thường nhật 
+                        với technique jump-cut và rhythm editing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" onclick="openModal('Tech Innovation Report')">
+                <div class="card-header">
+                    <div class="project-type">NEWS PACKAGE</div>
+                    <div>2024</div>
+                </div>
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">Tech Innovation Report</h3>
+                    <p class="project-description">
+                        Package tin tức chuyên nghiệp với lower thirds 
+                        và infographic animation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" onclick="openModal('Midnight Dreams')">
+                <div class="card-header">
+                    <div class="project-type">MUSIC VIDEO</div>
+                    <div>2024</div>
+                </div>
+                <div class="video-thumbnail">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">"Midnight Dreams"</h3>
+                    <p class="project-description">
+                        Music video nghệ thuật với VFX và creative transitions 
+                        synchronized với beat của nhạc.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Video Editor Junior Portfolio. Made with ❤️</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 id="modalTitle">Video Title</h2>
+            <div style="background: #000; height: 300px; display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                <p style="color: #666;">Video preview sẽ hiển thị ở đây</p>
+            </div>
+            <p>Demo portfolio - Video thực tế sẽ được nhúng vào đây</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript functionality
+        function scrollToPortfolio() {
+            document.getElementById('portfolio').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function openModal(title) {
+            const modal = document.getElementById('videoModal');
+            const modalTitle = document.getElementById('modalTitle');
+            modalTitle.textContent = title;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Hamburger menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            alert('Menu chức năng sẽ được thêm vào sau!');
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        console.log('🎬 Simple Portfolio loaded successfully!');
+    </script>
+</body>
+</html>

@@ -25,13 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // =====================================================
 function initializePortfolio() {
     // Initialize AOS (Animate On Scroll)
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out-cubic',
-        once: true,
-        offset: 100,
-        delay: 100
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 100,
+            delay: 100
+        });
+    }
 
     // Initialize all components
     initPreloader();
@@ -131,23 +133,37 @@ function initCustomCursor() {
 function initNavigation() {
     const hamburger = document.getElementById('hamburger');
     const fullscreenMenu = document.getElementById('fullscreen-menu');
-    const closeMenu = document.getElementById('close-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
     const menuLinks = document.querySelectorAll('.menu-link');
     
-    if (!hamburger || !fullscreenMenu || !closeMenu) return;
+    if (!hamburger || !fullscreenMenu || !closeMenuBtn) return;
     
-    // Open menu
+    // Open menu function
+    function openMenu() {
+        isMenuOpen = true;
+        hamburger.classList.add('active');
+        fullscreenMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Close menu function
+    function closeMenuHandler() {
+        isMenuOpen = false;
+        hamburger.classList.remove('active');
+        fullscreenMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Event listeners
     hamburger.addEventListener('click', openMenu);
-    
-    // Close menu
-    closeMenu.addEventListener('click', closeMenu);
+    closeMenuBtn.addEventListener('click', closeMenuHandler);
     
     // Menu links
     menuLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetSection = link.getAttribute('data-section');
-            closeMenu();
+            closeMenuHandler();
             
             setTimeout(() => {
                 scrollToSection(targetSection);
@@ -158,23 +174,9 @@ function initNavigation() {
     // Close menu on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && isMenuOpen) {
-            closeMenu();
+            closeMenuHandler();
         }
     });
-    
-    function openMenu() {
-        isMenuOpen = true;
-        hamburger.classList.add('active');
-        fullscreenMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeMenu() {
-        isMenuOpen = false;
-        hamburger.classList.remove('active');
-        fullscreenMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    }
 }
 
 // =====================================================
@@ -241,7 +243,6 @@ function initPortfolioInteractions() {
     
     portfolioCards.forEach(card => {
         const playButton = card.querySelector('.play-button');
-        const thumbnail = card.querySelector('.video-thumbnail');
         
         // Card hover effects
         card.addEventListener('mouseenter', () => {
@@ -460,14 +461,16 @@ function showVideoModal(card) {
     const closeBtn = modal.querySelector('.modal-close');
     const overlay = modal.querySelector('.modal-overlay');
     
-    closeBtn.addEventListener('click', closeModal);
-    overlay.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModalHandler);
+    overlay.addEventListener('click', closeModalHandler);
     
-    function closeModal() {
+    function closeModalHandler() {
         modal.style.animation = 'modalFadeIn 0.3s ease reverse';
         setTimeout(() => {
-            document.body.removeChild(modal);
-            document.body.style.overflow = '';
+            if (modal.parentNode) {
+                document.body.removeChild(modal);
+                document.body.style.overflow = '';
+            }
         }, 300);
     }
 }
@@ -696,14 +699,16 @@ function expandPortfolioCard(card) {
     const closeBtn = expandedView.querySelector('.expanded-close');
     const overlay = expandedView.querySelector('.expanded-overlay');
     
-    closeBtn.addEventListener('click', closeExpanded);
-    overlay.addEventListener('click', closeExpanded);
+    closeBtn.addEventListener('click', closeExpandedHandler);
+    overlay.addEventListener('click', closeExpandedHandler);
     
-    function closeExpanded() {
+    function closeExpandedHandler() {
         expandedView.style.animation = 'expandedFadeIn 0.4s ease reverse';
         setTimeout(() => {
-            document.body.removeChild(expandedView);
-            document.body.style.overflow = '';
+            if (expandedView.parentNode) {
+                document.body.removeChild(expandedView);
+                document.body.style.overflow = '';
+            }
         }, 400);
     }
 }
@@ -730,7 +735,9 @@ function addCustomEventListeners() {
     // Resize listener
     window.addEventListener('resize', () => {
         // Recalculate positions if needed
-        AOS.refresh();
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+        }
     });
     
     // Keyboard shortcuts

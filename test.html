@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Portfolio</title>
+    <style>
+        :root {
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-gray-dark: #1a1a1a;
+            --color-gray-medium: #2a2a2a;
+            --color-accent: #ff6b6b;
+            --font-primary: 'Arial', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-black);
+            color: var(--color-white);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        h1 {
+            color: var(--color-accent);
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--color-accent);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .status {
+            background: var(--color-gray-medium);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🎬 Portfolio Test Page</h1>
+        
+        <div class="status">
+            <h3>Status: JavaScript Test</h3>
+            <p id="test-result">Đang kiểm tra...</p>
+        </div>
+        
+        <a href="index.html" class="btn">Mở Portfolio Chính</a>
+        <button onclick="testFunction()" class="btn">Test JavaScript</button>
+        
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function testFunction() {
+            const result = document.getElementById('test-result');
+            const output = document.getElementById('output');
+            
+            try {
+                // Test basic JavaScript
+                result.textContent = '✅ JavaScript hoạt động bình thường';
+                result.style.color = '#4ecdc4';
+                
+                // Test portfolio functions if available
+                if (window.VideoEditorPortfolio) {
+                    output.innerHTML += '<p>✅ Portfolio functions loaded</p>';
+                } else {
+                    output.innerHTML += '<p>⚠️ Portfolio functions not loaded (normal for test page)</p>';
+                }
+                
+                // Test CSS variables
+                const styles = getComputedStyle(document.documentElement);
+                const accentColor = styles.getPropertyValue('--color-accent');
+                if (accentColor) {
+                    output.innerHTML += `<p>✅ CSS Variables working: ${accentColor}</p>`;
+                }
+                
+            } catch (error) {
+                result.textContent = '❌ Có lỗi: ' + error.message;
+                result.style.color = '#ff6b6b';
+            }
+        }
+        
+        // Auto test on load
+        document.addEventListener('DOMContentLoaded', testFunction);
+    </script>
+</body>
+</html>
