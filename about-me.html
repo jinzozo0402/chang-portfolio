@@ -1,262 +1,555 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Nguyễn - Video Editor & AI Content Creator</title>
+    <title>Trang Nguyen - Video Editor & AI Content Creator</title>
+    <meta name="description" content="Portfolio and Resume of Trang Nguyen - Video Editor & AI-assisted Content Creator.">
+    
     <style>
+        /* CSS Variables - Modern Dark Theme for Creators */
         :root {
-            --primary-color: #2563eb;
-            --text-color: #333;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
+            --bg-body: #0f172a; /* Slate 900 */
+            --bg-card: #1e293b; /* Slate 800 */
+            --bg-sidebar: #020617; /* Slate 950 */
+            --text-main: #cbd5e1; /* Slate 300 */
+            --text-heading: #f8fafc; /* Slate 50 */
+            --text-muted: #94a3b8; /* Slate 400 */
+            --accent: #06b6d4; /* Cyan 500 - Tech/AI Vibe */
+            --accent-hover: #0891b2; /* Cyan 600 */
+            --border-color: #334155; /* Slate 700 */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
             line-height: 1.6;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        /* Layout Container */
+        .resume-container {
+            max-width: 1050px;
+            margin: 40px auto;
+            background-color: var(--bg-card);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 100vh;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
         }
 
-        header {
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
+        /* --- SIDEBAR --- */
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            padding: 50px 35px;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            margin: 0 auto 25px;
+            display: block;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            padding: 4px;
+        }
+
+        .name-title {
             text-align: center;
+            margin-bottom: 40px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
+        .name-title h1 {
+            color: var(--text-heading);
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
 
-        h2.subtitle {
-            color: var(--primary-color);
-            font-size: 1.2rem;
+        .name-title h2 {
+            color: var(--accent);
+            font-size: 14px;
             font-weight: 500;
-            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.4;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            font-size: 0.9rem;
+        .sidebar-section {
+            margin-bottom: 35px;
         }
 
-        .contact-info a {
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary-color);
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: #0f172a;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
+        .sidebar-title {
+            color: var(--text-heading);
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        .grid-2 {
+        .contact-list, .soft-skills-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 14px;
+            word-break: break-word;
+        }
+
+        .contact-icon {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .contact-list a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-list a:hover {
+            color: var(--accent);
+        }
+
+        .soft-skills-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            position: relative;
+            padding-left: 18px;
+        }
+        
+        .soft-skills-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+        
+        .edu-school {
+            font-weight: 600;
+            color: var(--text-heading);
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .edu-degree {
+            font-size: 13px;
+            color: var(--text-main);
+        }
+
+        .edu-date {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            padding: 50px 45px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            color: var(--text-heading);
+            font-size: 22px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
+            margin-left: 15px;
+        }
+
+        .about-text {
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        /* Tags for Skills & AI */
+        .tags-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 20px;
         }
 
-        ul {
-            list-style-position: inside;
-            padding-left: 0.5rem;
+        .tag-group {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
         }
 
-        li {
-            margin-bottom: 0.5rem;
+        .tag-group h3 {
+            font-size: 14px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
-        .experience-item, .education-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.5rem;
-        }
-
-        .item-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .item-date {
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        .tags {
+        .tag-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 10px;
         }
 
         .tag {
-            background: #e0e7ff;
-            color: var(--primary-color);
-            padding: 0.2rem 0.8rem;
-            border-radius: 999px;
-            font-size: 0.85rem;
+            background-color: rgba(6, 182, 212, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
             font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                margin: 0;
-                padding: 1.5rem;
-                border-radius: 0;
-            }
-            .grid-2 {
+        .tag:hover {
+            background-color: var(--accent);
+            color: #000;
+        }
+
+        .workflow-note {
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Timeline / Experience */
+        .timeline-item {
+            position: relative;
+            padding-left: 25px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .timeline-header {
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .timeline-date {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .timeline-content {
+            list-style-type: none;
+            color: var(--text-main);
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .timeline-content li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+
+        /* Selected Projects */
+        .projects-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .projects-list li {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .projects-list li::before {
+            content: '🎥';
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .portfolio-cta {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(6, 182, 212, 0.05);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+        }
+
+        .portfolio-cta a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .portfolio-cta a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 850px) {
+            .resume-container {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                margin: 0;
+                border-radius: 0;
+                border: none;
             }
-            .item-header {
-                flex-direction: column;
+            .sidebar {
+                padding: 40px 25px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .main-content {
+                padding: 40px 25px;
+            }
+            .tags-grid, .projects-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- PRINT STYLES (Force Light Mode for Printing) --- */
+        @media print {
+            body, .resume-container, .sidebar, .main-content {
+                background-color: white !important;
+                color: black !important;
+            }
+            .resume-container {
+                margin: 0;
+                box-shadow: none;
+                border: none;
+                grid-template-columns: 280px 1fr;
+            }
+            .sidebar {
+                border-right: 1px solid #ccc;
+            }
+            .name-title h1, .sidebar-title, .section-title, .timeline-title, .edu-school {
+                color: black !important;
+            }
+            .name-title h2, .timeline-date, .tag-group h3 {
+                color: #0284c7 !important; /* Darker blue for print */
+            }
+            .text-main, .text-muted, .about-text {
+                color: #333 !important;
+            }
+            .tag-group, .projects-list li {
+                border: 1px solid #ccc !important;
+                background: white !important;
+            }
+            .tag {
+                border: 1px solid #ccc !important;
+                color: black !important;
+                background: transparent !important;
+            }
+            .portfolio-cta {
+                background: transparent !important;
+                border-left: 4px solid #0284c7 !important;
+            }
+            .section-title::after {
+                background-color: #ccc !important;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Trang Nguyễn</h1>
-        <h2 class="subtitle">Video Editor | AI-assisted Content Creator</h2>
-        <div class="contact-info">
-            <span>📱 0378 099 668</span>
-            <span>📧 <a href="mailto:nttrang98.nxt@gmail.com">nttrang98.nxt@gmail.com</a></span>
-            <span>📍 Hà Đông - Hà Nội</span>
-            <span>🌐 <a href="https://chang-portfolio.netlify.app/" target="_blank">Portfolio</a></span>
+<div class="resume-container">
+    <!-- LEFT COLUMN: PROFILE & QUICK INFO -->
+    <aside class="sidebar">
+        <!-- Thay src bằng link ảnh của bạn (khuyên dùng ảnh vuông) -->
+        <img src="https://via.placeholder.com/160x160.png?text=Profile" alt="Trang Nguyen" class="profile-pic">
+        
+        <div class="name-title">
+            <h1>Trang Nguyen</h1>
+            <h2>Video Editor<br>AI-assisted Content Creator</h2>
         </div>
-    </header>
 
-    <section>
-        <h3>Professional Summary</h3>
-        <p>Video Editor focused on short-form content for TikTok, YouTube, and social media platforms. Experienced in editing news videos, product reviews, real estate content, storytelling videos, and narration-based content.</p>
-        <p style="margin-top: 0.5rem;">Skilled in Adobe Premiere Pro, After Effects, Photoshop, and AI-assisted editing workflows to improve production speed and creative quality. Strong adaptability, fast learning ability, and experience working with multiple content styles and formats.</p>
-    </section>
-
-    <section class="grid-2">
-        <div>
-            <h3>Tools & Skills</h3>
-            <ul>
-                <li>Adobe Premiere Pro, After Effects, Photoshop</li>
-                <li>CapCut</li>
-                <li>Motion graphics & subtitle editing</li>
-                <li>Short-form content editing</li>
-                <li>Social media video optimization</li>
-                <li>Sound synchronization & pacing</li>
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Contact</h3>
+            <ul class="contact-list">
+                <li><span class="contact-icon">📱</span> 0378 099 668</li>
+                <li><span class="contact-icon">📧</span> <a href="mailto:nttrang98.nxt@gmail.com">nttrang98.nxt@gmail.com</a></li>
+                <li><span class="contact-icon">📍</span> Hà Đông - Hà Nội</li>
+                <li><span class="contact-icon">🌐</span> <a href="https://chang-portfolio.netlify.app/" target="_blank">Portfolio Website</a></li>
             </ul>
         </div>
-        <div>
-            <h3>AI Workflow & Tools</h3>
-            <div class="tags">
-                <span class="tag">ChatGPT</span>
-                <span class="tag">Gemini Image</span>
-                <span class="tag">Midjourney</span>
-                <span class="tag">Veo</span>
-                <span class="tag">Kling</span>
-                <span class="tag">ElevenLabs</span>
-                <span class="tag">CapCut AI</span>
-            </div>
-            <ul style="margin-top: 1rem;">
-                <li>AI image & voice (TTS) generation</li>
-                <li>AI-assisted video workflow</li>
-            </ul>
-        </div>
-    </section>
 
-    <section>
-        <h3>Experience</h3>
-        <div class="experience-item">
-            <div class="item-header">
-                <span class="item-title">Freelance Video Editor</span>
-                <span class="item-date">2025 - Present</span>
-            </div>
-            <ul>
-                <li>Edited short-form videos for TikTok, YouTube Shorts, and social media platforms.</li>
-                <li>Produced product review videos, advertisements, real estate videos, and storytelling content.</li>
-                <li>Worked with multiple content styles including news, self-narrative storytelling, and audiobook/reading formats.</li>
-                <li>Created subtitles, transitions, motion graphics, and AI-assisted visuals for video production.</li>
-                <li>Optimized pacing and hooks for audience retention and engagement.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h3>Selected Project Categories</h3>
-        <ul>
-            <li>Banking & finance-related social media videos.</li>
-            <li>Real estate promotional videos.</li>
-            <li>News-style short-form content.</li>
-            <li>Product review and advertising videos.</li>
-            <li>Self-narrative storytelling & audiobook-style content.</li>
-        </ul>
-        <p style="margin-top: 1rem; font-style: italic;">👉 View references at: <a href="https://chang-portfolio.netlify.app/" target="_blank">Portfolio Website</a></p>
-    </section>
-
-    <section class="grid-2">
-        <div>
-            <h3>Education</h3>
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Education</h3>
+            
             <div class="education-item">
-                <div class="item-header">
-                    <span class="item-title">University of Economics - Technology for Industries</span>
-                </div>
-                <div class="item-date">Accounting (2016 - 2020)</div>
+                <div class="edu-school">CROM Creator Course</div>
+                <div class="edu-degree">Video Editing</div>
+                <div class="edu-date">2024 - 2025</div>
             </div>
+
             <div class="education-item">
-                <div class="item-header">
-                    <span class="item-title">CROM Creator Course</span>
-                </div>
-                <div class="item-date">Video Editing (2024 - 2025)</div>
+                <div class="edu-school">University of Economics - Technology for Industries</div>
+                <div class="edu-degree">Accounting</div>
+                <div class="edu-date">2016 - 2020</div>
             </div>
         </div>
-        <div>
-            <h3>Soft Skills</h3>
-            <ul>
+
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Soft Skills</h3>
+            <ul class="soft-skills-list">
                 <li>Communication & active listening</li>
-                <li>Time management & Problem-solving</li>
-                <li>Teamwork & Creative thinking</li>
+                <li>Time management</li>
+                <li>Problem solving</li>
+                <li>Teamwork</li>
+                <li>Creative thinking</li>
                 <li>Fast learning & adaptability</li>
             </ul>
         </div>
-    </section>
+    </aside>
+
+    <!-- RIGHT COLUMN: MAIN CONTENT -->
+    <main class="main-content">
+        
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="about-text">
+                Video Editor focused on short-form content for TikTok, YouTube, and social media platforms. Experienced in editing news videos, product reviews, real estate content, storytelling videos, and narration-based content. 
+            </p>
+            <p class="about-text">
+                Skilled in Adobe Premiere Pro, After Effects, Photoshop, and AI-assisted editing workflows to improve production speed and creative quality. Strong adaptability, fast learning ability, and experience working with multiple content styles and formats.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="tags-grid">
+                
+                <div class="tag-group">
+                    <h3>Tools & Skills</h3>
+                    <div class="tag-container">
+                        <span class="tag">Adobe Premiere Pro</span>
+                        <span class="tag">After Effects</span>
+                        <span class="tag">Photoshop</span>
+                        <span class="tag">CapCut</span>
+                        <span class="tag">Motion Graphics</span>
+                        <span class="tag">Subtitle Editing</span>
+                        <span class="tag">Short-form Content</span>
+                        <span class="tag">Social Media Optimization</span>
+                        <span class="tag">Sound Synchronization</span>
+                    </div>
+                </div>
+
+                <div class="tag-group">
+                    <h3>AI Workflow & Tools</h3>
+                    <div class="tag-container">
+                        <span class="tag">ChatGPT</span>
+                        <span class="tag">Gemini Image</span>
+                        <span class="tag">Midjourney</span>
+                        <span class="tag">Veo</span>
+                        <span class="tag">Kling</span>
+                        <span class="tag">ElevenLabs</span>
+                        <span class="tag">CapCut AI</span>
+                    </div>
+                    <div class="workflow-note">
+                        * Applied in AI image generation, AI voice generation (TTS), and AI-assisted video workflows.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Freelance Video Editor</div>
+                    <div class="timeline-date">2025 - Present</div>
+                </div>
+                <ul class="timeline-content">
+                    <li>Edited short-form videos for TikTok, YouTube Shorts, and social media platforms.</li>
+                    <li>Produced product review videos, advertisements, real estate videos, and storytelling content.</li>
+                    <li>Worked with multiple content styles including news, self-narrative storytelling, and audiobook/reading formats.</li>
+                    <li>Created subtitles, transitions, motion graphics, and AI-assisted visuals for video production.</li>
+                    <li>Optimized pacing and hooks for audience retention and engagement.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Selected Project Categories</h2>
+            <ul class="projects-list">
+                <li>Banking & finance-related videos</li>
+                <li>Real estate promotional videos</li>
+                <li>News-style short form content</li>
+                <li>Product review & advertising</li>
+                <li>Self-narrative storytelling</li>
+                <li>Reading / audiobook-style content</li>
+            </ul>
+
+            <div class="portfolio-cta">
+                💡 Additional source links and project references available in <a href="https://chang-portfolio.netlify.app/" target="_blank">portfolio website →</a>
+            </div>
+        </section>
+
+    </main>
 </div>
 
 </body>
