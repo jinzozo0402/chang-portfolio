@@ -1,556 +1,941 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Nguyen - Video Editor & AI Content Creator</title>
-    <meta name="description" content="Portfolio and Resume of Trang Nguyen - Video Editor & AI-assisted Content Creator.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Title -->
+    <title class="lang-vi">Trang Nguyễn - Sơ yếu lý lịch | Video Editor & AI Content Creator</title>
+    <title class="lang-en">Trang Nguyen - Resume | Video Editor & AI Content Creator</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sơ yếu lý lịch và chi tiết kinh nghiệm của Trang Nguyễn - Video Editor chuyên nghiệp và Sáng tạo nội dung hỗ trợ bởi AI. Resume and experience details of Trang Nguyen - Video Editor & AI Content Creator." />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* CSS Variables - Modern Dark Theme for Creators */
-        :root {
-            --bg-body: #0f172a; /* Slate 900 */
-            --bg-card: #1e293b; /* Slate 800 */
-            --bg-sidebar: #020617; /* Slate 950 */
-            --text-main: #cbd5e1; /* Slate 300 */
-            --text-heading: #f8fafc; /* Slate 50 */
-            --text-muted: #94a3b8; /* Slate 400 */
-            --accent: #06b6d4; /* Cyan 500 - Tech/AI Vibe */
-            --accent-hover: #0891b2; /* Cyan 600 */
-            --border-color: #334155; /* Slate 700 */
-        }
+      /* CSS Variables - Modern Dark Theme for Creators */
+      :root {
+        --bg-body: #070708; /* Slate 950 */
+        --bg-card: #0e0e11; /* Slate 900 */
+        --bg-sidebar: #020204; /* Slate 950 Dark */
+        --text-main: #cbd5e1; /* Slate 300 */
+        --text-heading: #f8fafc; /* Slate 50 */
+        --text-muted: #94a3b8; /* Slate 400 */
+        --accent: #00f0ff; /* Ice Teal */
+        --accent-hover: #00bfff;
+        --border-color: #222227; /* Slate 800 */
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      body.light-theme {
+        --bg-body: #f5f5f7; /* Chalk White */
+        --bg-card: #ffffff; /* Pure White */
+        --bg-sidebar: #e8e8ed; /* Light Metal */
+        --text-main: #334155; /* Charcoal */
+        --text-heading: #121214; /* Pure Black */
+        --text-muted: #6e6e73; /* Muted */
+        --accent: #ff5e00; /* Amber Orange */
+        --accent-hover: #e05300;
+        --border-color: rgba(0, 0, 0, 0.08);
+      }
 
-        body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            font-size: 15px;
-            -webkit-font-smoothing: antialiased;
-        }
+      /* Language Visibility Rules */
+      body.lang-vi .lang-en { display: none !important; }
+      body.lang-en .lang-vi { display: none !important; }
 
-        /* Layout Container */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          "Segoe UI",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        line-height: 1.6;
+        font-size: 15px;
+        -webkit-font-smoothing: antialiased;
+        transition: background-color 0.4s ease, color 0.4s ease;
+      }
+
+      /* --- HEADER BAR (Floating navigation) --- */
+      .cv-nav-header {
+        max-width: 1050px;
+        margin: 20px auto 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+
+      .back-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-heading);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: color 0.3s;
+      }
+
+      .back-btn:hover {
+        color: var(--accent);
+      }
+
+      .cv-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      /* Theme toggle key styles */
+      .theme-toggle-btn {
+        background: transparent;
+        border: 1px solid var(--border-color);
+        color: var(--text-heading);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .theme-toggle-btn:hover {
+        border-color: var(--accent);
+        background: rgba(0, 240, 255, 0.05);
+      }
+
+      .theme-toggle-btn i {
+        position: absolute;
+        transition: transform 0.4s ease, opacity 0.4s;
+      }
+
+      body.dark-theme .theme-toggle-btn .fa-sun,
+      body.light-theme .theme-toggle-btn .fa-moon {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      body.dark-theme .theme-toggle-btn .fa-moon,
+      body.light-theme .theme-toggle-btn .fa-sun {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Language switcher */
+      .lang-switcher {
+        display: flex;
+        align-items: center;
+        background: var(--bg-body);
+        border: 1px solid var(--border-color);
+        padding: 2px;
+        border-radius: 20px;
+        position: relative;
+        cursor: pointer;
+        width: 66px;
+        height: 30px;
+        user-select: none;
+      }
+
+      .lang-slider-bg {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: calc(50% - 2px);
+        height: calc(100% - 4px);
+        background: var(--accent);
+        border-radius: 18px;
+        transition: all 0.3s ease;
+      }
+
+      body.lang-en .lang-slider-bg {
+        left: calc(50%);
+      }
+
+      .lang-switcher span {
+        flex: 1;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 700;
+        color: var(--text-muted);
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s;
+      }
+
+      body.lang-vi .lang-switcher span.btn-vi,
+      body.lang-en .lang-switcher span.btn-en {
+        color: #000000 !important;
+      }
+      body.dark-theme.lang-vi .lang-switcher span.btn-vi,
+      body.dark-theme.lang-en .lang-switcher span.btn-en {
+        color: #000000 !important;
+      }
+      body.light-theme.lang-vi .lang-switcher span.btn-vi,
+      body.light-theme.lang-en .lang-switcher span.btn-en {
+        color: #ffffff !important;
+      }
+
+      /* Layout Container */
+      .resume-container {
+        max-width: 1050px;
+        margin: 20px auto 40px auto;
+        background-color: var(--bg-card);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        min-height: 100vh;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+      }
+
+      /* --- SIDEBAR --- */
+      .sidebar {
+        background-color: var(--bg-sidebar);
+        padding: 50px 35px;
+        border-right: 1px solid var(--border-color);
+      }
+
+      .profile-pic {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background-color: var(--border-color);
+        margin: 0 auto 25px;
+        display: block;
+        object-fit: cover;
+        border: 3px solid var(--accent);
+        padding: 4px;
+        transition: border-color 0.3s;
+      }
+
+      .name-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .name-title h1 {
+        color: var(--text-heading);
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .name-title h2 {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        line-height: 1.4;
+      }
+
+      .sidebar-section {
+        margin-bottom: 35px;
+      }
+
+      .sidebar-title {
+        color: var(--text-heading);
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .contact-list,
+      .soft-skills-list {
+        list-style: none;
+      }
+
+      .contact-list li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        font-size: 14px;
+        word-break: break-word;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      .contact-list a {
+        color: var(--text-main);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .contact-list a:hover {
+        color: var(--accent);
+      }
+
+      .soft-skills-list li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .soft-skills-list li::before {
+        content: "▹";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      .education-item {
+        margin-bottom: 15px;
+      }
+
+      .edu-school {
+        font-weight: 600;
+        color: var(--text-heading);
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+
+      .edu-degree {
+        font-size: 13px;
+        color: var(--text-main);
+      }
+
+      .edu-date {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      /* --- MAIN CONTENT --- */
+      .main-content {
+        padding: 50px 45px;
+      }
+
+      .section {
+        margin-bottom: 45px;
+      }
+
+      .section-title {
+        color: var(--text-heading);
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+      }
+
+      .section-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background-color: var(--border-color);
+        margin-left: 15px;
+      }
+
+      .about-text {
+        text-align: justify;
+        margin-bottom: 15px;
+        font-size: 14.5px;
+      }
+
+      /* Tags for Skills & AI */
+      .tags-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .tag-group {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 20px;
+      }
+
+      .tag-group h3 {
+        font-size: 13px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .tag {
+        background-color: rgba(0, 240, 255, 0.05);
+        color: var(--text-main);
+        border: 1px solid var(--border-color);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .tag:hover {
+        background-color: var(--accent);
+        color: #000000;
+        border-color: var(--accent);
+      }
+
+      .workflow-note {
+        margin-top: 15px;
+        font-size: 12px;
+        color: var(--text-muted);
+        font-style: italic;
+      }
+
+      /* Timeline / Experience */
+      .timeline-item {
+        position: relative;
+        padding-left: 25px;
+        border-left: 2px solid var(--border-color);
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -6px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        box-shadow: 0 0 10px var(--accent);
+      }
+
+      .timeline-header {
+        margin-bottom: 10px;
+      }
+
+      .timeline-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-heading);
+      }
+
+      .timeline-date {
+        font-size: 14px;
+        color: var(--accent);
+        font-weight: 500;
+        margin-top: 2px;
+      }
+
+      .timeline-content {
+        list-style-type: none;
+        color: var(--text-main);
+      }
+
+      .timeline-content li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .timeline-content li::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        color: var(--text-muted);
+      }
+
+      /* Selected Projects */
+      .projects-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .projects-list li {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border-color);
+        padding: 12px 15px;
+        border-radius: 6px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+
+      .projects-list li::before {
+        content: "🎥";
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      .portfolio-cta {
+        margin-top: 25px;
+        padding: 15px;
+        background: rgba(0, 240, 255, 0.03);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 8px 8px 0;
+        font-size: 14px;
+      }
+
+      .portfolio-cta a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .portfolio-cta a:hover {
+        text-decoration: underline;
+      }
+
+      /* --- RESPONSIVE --- */
+      @media (max-width: 850px) {
+        .cv-nav-header {
+          margin: 0;
+          border-radius: 0;
+          border-left: none; border-right: none; border-top: none;
+        }
         .resume-container {
-            max-width: 1050px;
-            margin: 40px auto;
-            background-color: var(--bg-card);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            min-height: 100vh;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
+          grid-template-columns: 1fr;
+          margin: 0;
+          border-radius: 0;
+          border: none;
         }
-
-        /* --- SIDEBAR --- */
         .sidebar {
-            background-color: var(--bg-sidebar);
-            padding: 50px 35px;
-            border-right: 1px solid var(--border-color);
+          padding: 40px 25px;
+          border-right: none;
+          border-bottom: 1px solid var(--border-color);
         }
-
-        .profile-pic {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background-color: var(--border-color);
-            margin: 0 auto 25px;
-            display: block;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            padding: 4px;
-        }
-
-        .name-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .name-title h1 {
-            color: var(--text-heading);
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .name-title h2 {
-            color: var(--accent);
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            line-height: 1.4;
-        }
-
-        .sidebar-section {
-            margin-bottom: 35px;
-        }
-
-        .sidebar-title {
-            color: var(--text-heading);
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .contact-list, .soft-skills-list {
-            list-style: none;
-        }
-
-        .contact-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            font-size: 14px;
-            word-break: break-word;
-        }
-
-        .contact-icon {
-            margin-right: 10px;
-            font-size: 16px;
-        }
-
-        .contact-list a {
-            color: var(--text-main);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .contact-list a:hover {
-            color: var(--accent);
-        }
-
-        .soft-skills-list li {
-            margin-bottom: 10px;
-            font-size: 14px;
-            position: relative;
-            padding-left: 18px;
-        }
-        
-        .soft-skills-list li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        .education-item {
-            margin-bottom: 15px;
-        }
-        
-        .edu-school {
-            font-weight: 600;
-            color: var(--text-heading);
-            font-size: 14px;
-            margin-bottom: 2px;
-        }
-        
-        .edu-degree {
-            font-size: 13px;
-            color: var(--text-main);
-        }
-
-        .edu-date {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
-
-        /* --- MAIN CONTENT --- */
         .main-content {
-            padding: 50px 45px;
+          padding: 40px 25px;
         }
-
-        .section {
-            margin-bottom: 45px;
-        }
-
-        .section-title {
-            color: var(--text-heading);
-            font-size: 22px;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-
-        .section-title::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background-color: var(--border-color);
-            margin-left: 15px;
-        }
-
-        .about-text {
-            text-align: justify;
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
-
-        /* Tags for Skills & AI */
-        .tags-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .tag-group {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 20px;
-        }
-
-        .tag-group h3 {
-            font-size: 14px;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag {
-            background-color: rgba(6, 182, 212, 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(6, 182, 212, 0.2);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .tag:hover {
-            background-color: var(--accent);
-            color: #000;
-        }
-
-        .workflow-note {
-            margin-top: 15px;
-            font-size: 13px;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* Timeline / Experience */
-        .timeline-item {
-            position: relative;
-            padding-left: 25px;
-            border-left: 2px solid var(--border-color);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--accent);
-            box-shadow: 0 0 10px var(--accent);
-        }
-
-        .timeline-header {
-            margin-bottom: 10px;
-        }
-
-        .timeline-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-heading);
-        }
-
-        .timeline-date {
-            font-size: 14px;
-            color: var(--accent);
-            font-weight: 500;
-            margin-top: 2px;
-        }
-
-        .timeline-content {
-            list-style-type: none;
-            color: var(--text-main);
-        }
-
-        .timeline-content li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 18px;
-        }
-
-        .timeline-content li::before {
-            content: '-';
-            position: absolute;
-            left: 0;
-            color: var(--text-muted);
-        }
-
-        /* Selected Projects */
+        .tags-grid,
         .projects-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+          grid-template-columns: 1fr;
         }
+      }
 
+      /* --- PRINT STYLES (Force Light Mode for Printing) --- */
+      @media print {
+        .cv-nav-header {
+          display: none !important;
+        }
+        body,
+        .resume-container,
+        .sidebar,
+        .main-content {
+          background-color: white !important;
+          color: black !important;
+        }
+        .resume-container {
+          margin: 0;
+          box-shadow: none;
+          border: none;
+          grid-template-columns: 280px 1fr;
+        }
+        .sidebar {
+          border-right: 1px solid #ccc;
+        }
+        .name-title h1,
+        .sidebar-title,
+        .section-title,
+        .timeline-title,
+        .edu-school {
+          color: black !important;
+        }
+        .name-title h2,
+        .timeline-date,
+        .tag-group h3 {
+          color: #0284c7 !important; /* Darker blue for print */
+        }
+        .text-main,
+        .text-muted,
+        .about-text {
+          color: #333 !important;
+        }
+        .tag-group,
         .projects-list li {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-color);
-            padding: 12px 15px;
-            border-radius: 6px;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
+          border: 1px solid #ccc !important;
+          background: white !important;
         }
-        
-        .projects-list li::before {
-            content: '🎥';
-            margin-right: 10px;
-            font-size: 16px;
+        .tag {
+          border: 1px solid #ccc !important;
+          color: black !important;
+          background: transparent !important;
         }
-
         .portfolio-cta {
-            margin-top: 25px;
-            padding: 15px;
-            background: rgba(6, 182, 212, 0.05);
-            border-left: 4px solid var(--accent);
-            border-radius: 0 8px 8px 0;
-            font-size: 14px;
+          background: transparent !important;
+          border-left: 4px solid #0284c7 !important;
         }
-
-        .portfolio-cta a {
-            color: var(--accent);
-            font-weight: 600;
-            text-decoration: none;
+        .section-title::after {
+          background-color: #ccc !important;
         }
-        
-        .portfolio-cta a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 850px) {
-            .resume-container {
-                grid-template-columns: 1fr;
-                margin: 0;
-                border-radius: 0;
-                border: none;
-            }
-            .sidebar {
-                padding: 40px 25px;
-                border-right: none;
-                border-bottom: 1px solid var(--border-color);
-            }
-            .main-content {
-                padding: 40px 25px;
-            }
-            .tags-grid, .projects-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* --- PRINT STYLES (Force Light Mode for Printing) --- */
-        @media print {
-            body, .resume-container, .sidebar, .main-content {
-                background-color: white !important;
-                color: black !important;
-            }
-            .resume-container {
-                margin: 0;
-                box-shadow: none;
-                border: none;
-                grid-template-columns: 280px 1fr;
-            }
-            .sidebar {
-                border-right: 1px solid #ccc;
-            }
-            .name-title h1, .sidebar-title, .section-title, .timeline-title, .edu-school {
-                color: black !important;
-            }
-            .name-title h2, .timeline-date, .tag-group h3 {
-                color: #0284c7 !important; /* Darker blue for print */
-            }
-            .text-main, .text-muted, .about-text {
-                color: #333 !important;
-            }
-            .tag-group, .projects-list li {
-                border: 1px solid #ccc !important;
-                background: white !important;
-            }
-            .tag {
-                border: 1px solid #ccc !important;
-                color: black !important;
-                background: transparent !important;
-            }
-            .portfolio-cta {
-                background: transparent !important;
-                border-left: 4px solid #0284c7 !important;
-            }
-            .section-title::after {
-                background-color: #ccc !important;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-
-<div class="resume-container">
-    <!-- LEFT COLUMN: PROFILE & QUICK INFO -->
-    <aside class="sidebar">
-        <!-- Thay src bằng link ảnh của bạn (khuyên dùng ảnh vuông) -->
-        <img src="https://via.placeholder.com/160x160.png?text=Profile" alt="Trang Nguyen" class="profile-pic">
+  </head>
+  <body class="dark-theme lang-vi">
+  
+    <!-- CV FLOATING HEADER NAV -->
+    <header class="cv-nav-header">
+      <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span class="lang-vi">Quay lại Portfolio</span>
+        <span class="lang-en">Back to Portfolio</span>
+      </a>
+      
+      <div class="cv-controls">
+        <!-- Theme Switcher -->
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </button>
         
+        <!-- Language Switcher -->
+        <div class="lang-switcher" role="button" aria-label="Switch language">
+          <div class="lang-slider-bg"></div>
+          <span class="btn-vi">VI</span>
+          <span class="btn-en">EN</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="resume-container">
+      <!-- LEFT COLUMN: PROFILE & QUICK INFO -->
+      <aside class="sidebar">
+        <img
+          src="img/portfolio-img/avatar.jpg"
+          alt="Trang Nguyen"
+          class="profile-pic"
+        />
+
         <div class="name-title">
-            <h1>Trang Nguyen</h1>
-            <h2>Video Editor<br>AI-assisted Content Creator</h2>
+          <h1>Trang Nguyen</h1>
+          <h2>
+            <span class="lang-vi">DỰNG PHIM / VIDEO EDITOR</span>
+            <span class="lang-en">Video Editor</span>
+            <br />
+            <span class="lang-vi">SÁNG TẠO NỘI DUNG SỬ DỤNG AI</span>
+            <span class="lang-en">AI-assisted Content Creator</span>
+          </h2>
         </div>
 
         <div class="sidebar-section">
-            <h3 class="sidebar-title">Contact</h3>
-            <ul class="contact-list">
-                <li><span class="contact-icon">📱</span> 0378 099 668</li>
-                <li><span class="contact-icon">📧</span> <a href="mailto:nttrang98.nxt@gmail.com">nttrang98.nxt@gmail.com</a></li>
-                <li><span class="contact-icon">📍</span> Hà Đông - Hà Nội</li>
-                <li><span class="contact-icon">🌐</span> <a href="https://chang-portfolio.netlify.app/" target="_blank">Portfolio Website</a></li>
-            </ul>
+          <h3 class="sidebar-title">
+            <span class="lang-vi">Liên hệ</span>
+            <span class="lang-en">Contact</span>
+          </h3>
+          <ul class="contact-list">
+            <li><span class="contact-icon">📱</span> 0378 099 668</li>
+            <li>
+              <span class="contact-icon">📧</span>
+              <a href="mailto:nttrang98.nxt@gmail.com"
+                >nttrang98.nxt@gmail.com</a
+              >
+            </li>
+            <li>
+              <span class="contact-icon">📍</span> 
+              <span class="lang-vi">Hà Đông - Hà Nội</span>
+              <span class="lang-en">Ha Dong - Ha Noi</span>
+            </li>
+            <li>
+              <span class="contact-icon">🌐</span>
+              <a href="index.html">Portfolio Website</a>
+            </li>
+          </ul>
         </div>
 
         <div class="sidebar-section">
-            <h3 class="sidebar-title">Education</h3>
-            
-            <div class="education-item">
-                <div class="edu-school">CROM Creator Course</div>
-                <div class="edu-degree">Video Editing</div>
-                <div class="edu-date">2024 - 2025</div>
+          <h3 class="sidebar-title">
+            <span class="lang-vi">Học vấn</span>
+            <span class="lang-en">Education</span>
+          </h3>
+
+          <div class="education-item">
+            <div class="edu-school">CROM Creator Course</div>
+            <div class="edu-degree">
+              <span class="lang-vi">Dựng phim / Biên tập Video</span>
+              <span class="lang-en">Video Editing</span>
+            </div>
+            <div class="edu-date">2024 - 2025</div>
+          </div>
+
+          <div class="education-item">
+            <div class="edu-school">
+              University of Economics - Technology for Industries
+            </div>
+            <div class="edu-degree">
+              <span class="lang-vi">Ngành Kế toán</span>
+              <span class="lang-en">Accounting</span>
+            </div>
+            <div class="edu-date">2016 - 2020</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">
+            <span class="lang-vi">Kỹ năng mềm</span>
+            <span class="lang-en">Soft Skills</span>
+          </h3>
+          <ul class="soft-skills-list">
+            <li>
+              <span class="lang-vi">Giao tiếp & Lắng nghe tích cực</span>
+              <span class="lang-en">Communication & active listening</span>
+            </li>
+            <li>
+              <span class="lang-vi">Quản lý thời gian</span>
+              <span class="lang-en">Time management</span>
+            </li>
+            <li>
+              <span class="lang-vi">Giải quyết vấn đề</span>
+              <span class="lang-en">Problem solving</span>
+            </li>
+            <li>
+              <span class="lang-vi">Làm việc nhóm</span>
+              <span class="lang-en">Teamwork</span>
+            </li>
+            <li>
+              <span class="lang-vi">Tư duy sáng tạo</span>
+              <span class="lang-en">Creative thinking</span>
+            </li>
+            <li>
+              <span class="lang-vi">Học hỏi nhanh & Thích ứng tốt</span>
+              <span class="lang-en">Fast learning & adaptability</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN CONTENT -->
+      <main class="main-content">
+        <section class="section">
+          <h2 class="section-title">
+            <span class="lang-vi">Tóm tắt chuyên môn</span>
+            <span class="lang-en">Professional Summary</span>
+          </h2>
+          <p class="about-text">
+            <span class="lang-vi">Biên tập viên Video tập trung vào nội dung ngắn cho TikTok, YouTube Shorts và các nền tảng mạng xã hội. Có kinh nghiệm dựng video tin tức, review sản phẩm, video bất động sản, kể chuyện và nội dung thuyết minh.</span>
+            <span class="lang-en">Video Editor focused on short-form content for TikTok, YouTube, and social media platforms. Experienced in editing news videos, product reviews, real estate content, storytelling videos, and narration-based content.</span>
+          </p>
+          <p class="about-text">
+            <span class="lang-vi">Thành thạo Adobe Premiere Pro, After Effects, Photoshop và quy trình làm việc hỗ trợ bởi AI để tối ưu hóa tốc độ sản xuất và nâng cao chất lượng sáng tạo. Khả năng thích ứng cao, học hỏi nhanh và có kinh nghiệm thực chiến với nhiều thể loại/định dạng nội dung khác nhau.</span>
+            <span class="lang-en">Skilled in Adobe Premiere Pro, After Effects, Photoshop, and AI-assisted editing workflows to improve production speed and creative quality. Strong adaptability, fast learning ability, and experience working with multiple content styles and formats.</span>
+          </p>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">
+            <span class="lang-vi">Năng lực chuyên môn</span>
+            <span class="lang-en">Technical Expertise</span>
+          </h2>
+          <div class="tags-grid">
+            <div class="tag-group">
+              <h3>
+                <span class="lang-vi">Công cụ & Kỹ năng</span>
+                <span class="lang-en">Tools & Skills</span>
+              </h3>
+              <div class="tag-container">
+                <span class="tag">Adobe Premiere Pro</span>
+                <span class="tag">After Effects</span>
+                <span class="tag">Photoshop</span>
+                <span class="tag">CapCut</span>
+                <span class="tag">Motion Graphics</span>
+                <span class="tag">Subtitle Editing</span>
+                <span class="tag">Short-form Content</span>
+                <span class="tag">Social Media Optimization</span>
+                <span class="tag">Sound Synchronization</span>
+              </div>
             </div>
 
-            <div class="education-item">
-                <div class="edu-school">University of Economics - Technology for Industries</div>
-                <div class="edu-degree">Accounting</div>
-                <div class="edu-date">2016 - 2020</div>
+            <div class="tag-group">
+              <h3>
+                <span class="lang-vi">Quy trình & Công cụ AI</span>
+                <span class="lang-en">AI Workflow & Tools</span>
+              </h3>
+              <div class="tag-container">
+                <span class="tag">ChatGPT</span>
+                <span class="tag">Gemini Image</span>
+                <span class="tag">Midjourney</span>
+                <span class="tag">Veo</span>
+                <span class="tag">Kling</span>
+                <span class="tag">ElevenLabs</span>
+                <span class="tag">CapCut AI</span>
+              </div>
+              <div class="workflow-note">
+                <span class="lang-vi">* Áp dụng trong tạo ảnh AI, giọng nói AI (TTS) và quy trình sản xuất video hỗ trợ bởi AI.</span>
+                <span class="lang-en">* Applied in AI image generation, AI voice generation (TTS), and AI-assisted video workflows.</span>
+              </div>
             </div>
-        </div>
+          </div>
+        </section>
 
-        <div class="sidebar-section">
-            <h3 class="sidebar-title">Soft Skills</h3>
-            <ul class="soft-skills-list">
-                <li>Communication & active listening</li>
-                <li>Time management</li>
-                <li>Problem solving</li>
-                <li>Teamwork</li>
-                <li>Creative thinking</li>
-                <li>Fast learning & adaptability</li>
+        <section class="section">
+          <h2 class="section-title">
+            <span class="lang-vi">Kinh nghiệm làm việc</span>
+            <span class="lang-en">Experience</span>
+          </h2>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div class="timeline-title">
+                <span class="lang-vi">Biên tập viên Video Tự do</span>
+                <span class="lang-en">Freelance Video Editor</span>
+              </div>
+              <div class="timeline-date">2025 - Present</div>
+            </div>
+            <ul class="timeline-content">
+              <li>
+                <span class="lang-vi">Biên tập video ngắn cho TikTok, YouTube Shorts và mạng xã hội.</span>
+                <span class="lang-en">Edited short-form videos for TikTok, YouTube Shorts, and social media platforms.</span>
+              </li>
+              <li>
+                <span class="lang-vi">Sản xuất video review sản phẩm, quảng cáo, bất động sản và nội dung kể chuyện.</span>
+                <span class="lang-en">Produced product review videos, advertisements, real estate videos, and storytelling content.</span>
+              </li>
+              <li>
+                <span class="lang-vi">Làm việc với nhiều phong cách nội dung: tin tức, tự sự, review sản phẩm và định dạng đọc sách/audiobook.</span>
+                <span class="lang-en">Worked with multiple content styles including news, self-narrative storytelling, and audiobook/reading formats.</span>
+              </li>
+              <li>
+                <span class="lang-vi">Tạo phụ đề, hiệu ứng chuyển cảnh, motion graphics và hình ảnh minh họa sử dụng công nghệ AI.</span>
+                <span class="lang-en">Created subtitles, transitions, motion graphics, and AI-assisted visuals for video production.</span>
+              </li>
+              <li>
+                <span class="lang-vi">Tối ưu hóa nhịp điệu (pacing) và các điểm nhấn (hook) đầu video để tối đa hóa tỷ lệ giữ chân người xem.</span>
+                <span class="lang-en">Optimized pacing and hooks for audience retention and engagement.</span>
+              </li>
             </ul>
-        </div>
-    </aside>
+          </div>
+        </section>
 
-    <!-- RIGHT COLUMN: MAIN CONTENT -->
-    <main class="main-content">
+        <section class="section">
+          <h2 class="section-title">
+            <span class="lang-vi">Các thể loại dự án nổi bật</span>
+            <span class="lang-en">Selected Project Categories</span>
+          </h2>
+          <ul class="projects-list">
+            <li>
+              <span class="lang-vi">Video liên quan đến tài chính & ngân hàng</span>
+              <span class="lang-en">Banking & finance-related videos</span>
+            </li>
+            <li>
+              <span class="lang-vi">Video quảng cáo, giới thiệu bất động sản</span>
+              <span class="lang-en">Real estate promotional videos</span>
+            </li>
+            <li>
+              <span class="lang-vi">Nội dung tin tức ngắn chuẩn TikTok</span>
+              <span class="lang-en">News-style short form content</span>
+            </li>
+            <li>
+              <span class="lang-vi">Video review sản phẩm & quảng cáo thương mại</span>
+              <span class="lang-en">Product review & advertising</span>
+            </li>
+            <li>
+              <span class="lang-vi">Video tự sự, chia sẻ câu chuyện</span>
+              <span class="lang-en">Self-narrative storytelling</span>
+            </li>
+            <li>
+              <span class="lang-vi">Video định dạng đọc sách, kể chuyện đêm muộn</span>
+              <span class="lang-en">Reading / audiobook-style content</span>
+            </li>
+          </ul>
+
+          <div class="portfolio-cta">
+            💡 
+            <span class="lang-vi">Xem thêm các đường link sản phẩm thực tế tại <a href="index.html">website portfolio chính →</a></span>
+            <span class="lang-en">Additional source links and project references available in <a href="index.html">portfolio website →</a></span>
+          </div>
+        </section>
+      </main>
+    </div>
+    
+    <!-- Script for Theme and Language Toggles -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Theme Engine
+        const themeBtn = document.querySelector('.theme-toggle-btn');
+        let theme = localStorage.getItem('preferred-theme');
+        if (!theme) {
+          const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+          theme = prefersLight ? 'light' : 'dark';
+        }
+        setTheme(theme);
         
-        <section class="section">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="about-text">
-                Video Editor focused on short-form content for TikTok, YouTube, and social media platforms. Experienced in editing news videos, product reviews, real estate content, storytelling videos, and narration-based content. 
-            </p>
-            <p class="about-text">
-                Skilled in Adobe Premiere Pro, After Effects, Photoshop, and AI-assisted editing workflows to improve production speed and creative quality. Strong adaptability, fast learning ability, and experience working with multiple content styles and formats.
-            </p>
-        </section>
+        if (themeBtn) {
+          themeBtn.addEventListener('click', () => {
+            const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(nextTheme);
+          });
+        }
+        
+        function setTheme(theme) {
+          if (theme === 'light') {
+            document.body.classList.add('light-theme');
+            document.body.classList.remove('dark-theme');
+          } else {
+            document.body.classList.remove('light-theme');
+            document.body.classList.add('dark-theme');
+          }
+          localStorage.setItem('preferred-theme', theme);
+        }
 
-        <section class="section">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="tags-grid">
-                
-                <div class="tag-group">
-                    <h3>Tools & Skills</h3>
-                    <div class="tag-container">
-                        <span class="tag">Adobe Premiere Pro</span>
-                        <span class="tag">After Effects</span>
-                        <span class="tag">Photoshop</span>
-                        <span class="tag">CapCut</span>
-                        <span class="tag">Motion Graphics</span>
-                        <span class="tag">Subtitle Editing</span>
-                        <span class="tag">Short-form Content</span>
-                        <span class="tag">Social Media Optimization</span>
-                        <span class="tag">Sound Synchronization</span>
-                    </div>
-                </div>
-
-                <div class="tag-group">
-                    <h3>AI Workflow & Tools</h3>
-                    <div class="tag-container">
-                        <span class="tag">ChatGPT</span>
-                        <span class="tag">Gemini Image</span>
-                        <span class="tag">Midjourney</span>
-                        <span class="tag">Veo</span>
-                        <span class="tag">Kling</span>
-                        <span class="tag">ElevenLabs</span>
-                        <span class="tag">CapCut AI</span>
-                    </div>
-                    <div class="workflow-note">
-                        * Applied in AI image generation, AI voice generation (TTS), and AI-assisted video workflows.
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Experience</h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-title">Freelance Video Editor</div>
-                    <div class="timeline-date">2025 - Present</div>
-                </div>
-                <ul class="timeline-content">
-                    <li>Edited short-form videos for TikTok, YouTube Shorts, and social media platforms.</li>
-                    <li>Produced product review videos, advertisements, real estate videos, and storytelling content.</li>
-                    <li>Worked with multiple content styles including news, self-narrative storytelling, and audiobook/reading formats.</li>
-                    <li>Created subtitles, transitions, motion graphics, and AI-assisted visuals for video production.</li>
-                    <li>Optimized pacing and hooks for audience retention and engagement.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Selected Project Categories</h2>
-            <ul class="projects-list">
-                <li>Banking & finance-related videos</li>
-                <li>Real estate promotional videos</li>
-                <li>News-style short form content</li>
-                <li>Product review & advertising</li>
-                <li>Self-narrative storytelling</li>
-                <li>Reading / audiobook-style content</li>
-            </ul>
-
-            <div class="portfolio-cta">
-                💡 Additional source links and project references available in <a href="https://chang-portfolio.netlify.app/" target="_blank">portfolio website →</a>
-            </div>
-        </section>
-
-    </main>
-</div>
-
-</body>
+        // Language Engine
+        const langSwitcher = document.querySelector('.lang-switcher');
+        let lang = localStorage.getItem('preferred-lang');
+        if (!lang) {
+          const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
+          lang = browserLang.startsWith('en') ? 'en' : 'vi';
+        }
+        setLanguage(lang);
+        
+        if (langSwitcher) {
+          langSwitcher.addEventListener('click', () => {
+            const currentLang = document.body.classList.contains('lang-en') ? 'en' : 'vi';
+            const nextLang = currentLang === 'vi' ? 'en' : 'vi';
+            setLanguage(nextLang);
+          });
+        }
+        
+        function setLanguage(lang) {
+          if (lang === 'en') {
+            document.body.classList.remove('lang-vi');
+            document.body.classList.add('lang-en');
+            document.documentElement.setAttribute('lang', 'en');
+          } else {
+            document.body.classList.remove('lang-en');
+            document.body.classList.add('lang-vi');
+            document.documentElement.setAttribute('lang', 'vi');
+          }
+          localStorage.setItem('preferred-lang', lang);
+        }
+      });
+    </script>
+  </body>
 </html>
